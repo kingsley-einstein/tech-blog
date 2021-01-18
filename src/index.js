@@ -1,9 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { v4 as uuid } from "uuid";
 import "./index.css";
 import App from "./App";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
+
+if (!localStorage.getItem("Client_Id")) {
+ const Client_Id = uuid();
+ localStorage.setItem("Client_Id", Client_Id);
+}
 
 ReactDOM.render(
  <React.StrictMode>

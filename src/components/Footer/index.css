@@ -1,0 +1,5 @@
+@media screen and (orientation: landscape) {
+ .marginized {
+  margin-top: 3em;
+ }
+}
