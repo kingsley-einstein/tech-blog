@@ -3,7 +3,6 @@ import { BrowserRouter as Router } from "react-router-dom";
 // import logo from "./logo.svg";
 import { Routes } from "./router";
 import { Navbar, Button, Hamburger } from "./components";
-import "./index.css";
 import "bulma/css/bulma.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "@fortawesome/fontawesome-free/css/brands.min.css";
@@ -23,7 +22,7 @@ const App = () => {
   <div>
    <div className="container is-fullhd">
     <Router>
-     <Navbar className="navbar is-link is-transparent" role="navigation">
+     <Navbar className="navbar is-dark" role="navigation">
       <div className="navbar-brand">
        <Hamburger externalFunction={setMenuShown} />
       </div>
@@ -31,7 +30,15 @@ const App = () => {
        <div className="navbar-end">
         <div className="navbar-item">
          <div className="buttons">
-          <Button className="button is-primary">Contact Me!</Button>
+          <Button className="button is-link is-light" href="/">
+           Home
+          </Button>
+          <Button className="button is-link is-light" href="/">
+           Portfolio
+          </Button>
+          <Button className="button is-primary" href="#">
+           Contact Me!
+          </Button>
          </div>
         </div>
        </div>
