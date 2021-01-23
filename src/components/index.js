@@ -8,6 +8,9 @@ import Foot from "./Footer";
 import Cols from "./Columns";
 import Col from "./Column";
 import Bx from "./Box";
+import Sc from "./Skills-Chart";
+import Sum from "./Summary";
+import SkS from "./Skills-Section";
 
 export const Button = Btn;
 export const Markdown = Md;
@@ -19,3 +22,6 @@ export const Footer = Foot;
 export const Columns = Cols;
 export const Column = Col;
 export const Box = Bx;
+export const SkillsChart = Sc;
+export const Summary = Sum;
+export const SkillsSection = SkS;

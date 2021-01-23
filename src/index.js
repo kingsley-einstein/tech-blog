@@ -1,10 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { v4 as uuid } from "uuid";
+import CodersRankSkillsChart from "@codersrank/skills-chart";
 import "./index.css";
 import App from "./App";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
+
+window.customElements.define("codersrank-skills-chart", CodersRankSkillsChart);
+// window.customElements.define("codersrank-summary", CodersRankSummary);
 
 if (!localStorage.getItem("Client_Id")) {
  const Client_Id = uuid();

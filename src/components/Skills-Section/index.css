@@ -1,0 +1,12 @@
+@media screen and (orientation: landscape) {
+ .skill-card {
+  width: 200px;
+  height: 300px;
+ }
+}
+
+@media screen and (orientation: portrait) {
+ .skill-card {
+  width: 100%;
+ }
+}
