@@ -3,7 +3,7 @@ import React from "react";
 import { Box } from "../../components";
 import * as util from "../../utils";
 
-const Articles = () => {
+const Articles = props => {
  const [articles, setArticles] = React.useState([]);
  const [page, setPage] = React.useState(1);
  // const [columns, setColumns] = React.useState([]);
@@ -25,6 +25,10 @@ const Articles = () => {
   const a = await util.loadArticles();
   setArticles(a);
   // loadCols();
+ };
+
+ const navigateToArticlePage = id => {
+  return props.history.push(`/article/${id}`);
  };
 
  // const loadCols = () => {
@@ -52,7 +56,10 @@ const Articles = () => {
     <ul>
      {articles.slice((page - 1) * 10, page * 10).map(article => (
       <li key={article.id}>
-       <Box style={{ marginTop: 12 }}>
+       <Box
+        style={{ marginTop: 12, cursor: "pointer" }}
+        onClick={() => navigateToArticlePage(article.id)}
+       >
         <article className="media">
          <div className="media-left">
           <figure className="image is-64x64">
