@@ -28,7 +28,7 @@ const Header = () => {
        <Button className="button is-link is-light" to="/portfolio">
         Portfolio
        </Button>
-       <Button className="button is-primary" to="#">
+       <Button className="button is-primary" to="/contact">
         Contact Me!
        </Button>
       </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Markdown } from "../../components";
+import { Markdown, ArticleActions } from "../../components";
 import * as utils from "../../utils";
 
 const Article = props => {
@@ -19,8 +19,14 @@ const Article = props => {
  });
 
  return (
-  <div className="container">
-   <Markdown children={content} />
+  <div className="container" style={{ marginTop: "2em" }}>
+   <div
+    className="content is-medium"
+    style={{ padding: 5, fontFamily: "Roboto, sans-serif" }}
+   >
+    <Markdown source={content} />
+    <ArticleActions id={id} />
+   </div>
   </div>
  );
 };

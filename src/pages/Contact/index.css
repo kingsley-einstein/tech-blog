@@ -1,0 +1,31 @@
+/* .bottom-flex {
+ display: flex;
+ flex-flow: column wrap;
+ justify-content: center;
+ align-items: center;
+ margin-top: 12px;
+ margin-bottom: 12px;
+}
+
+.bottom-button {
+ padding: 8px;
+ text-align: center;
+} */
+
+@media screen and (orientation: landscape) {
+ .marginize {
+  margin-top: 4em;
+ }
+
+ .card-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+}
+
+@media screen and (orientation: portrait) {
+ /* .marginize {
+  margin-top: 3em;
+ } */
+}

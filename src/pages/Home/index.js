@@ -11,7 +11,7 @@ const Home = props => (
       <i className="fa fa-code"></i>
      </p>
     </header>
-    <div className="card-content">
+    <div className="card-content" style={{ fontFamily: "Roboto, sans-serif " }}>
      <div className="media">
       <div className="media-left">
        <figure className="image is-128x128">

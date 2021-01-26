@@ -11,6 +11,7 @@ import Bx from "./Box";
 import Sc from "./Skills-Chart";
 import Sum from "./Summary";
 import SkS from "./Skills-Section";
+import ArtActions from "./ArticleActions";
 
 export const Button = Btn;
 export const Markdown = Md;
@@ -25,3 +26,4 @@ export const Box = Bx;
 export const SkillsChart = Sc;
 export const Summary = Sum;
 export const SkillsSection = SkS;
+export const ArticleActions = ArtActions;

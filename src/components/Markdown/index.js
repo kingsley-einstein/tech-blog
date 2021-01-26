@@ -7,7 +7,13 @@ import gfm from "remark-gfm";
 const renderers = {
  code: ({ language, value }) => (
   <SyntaxHighlight style={atomDark} language={language} children={value} />
- )
+ ),
+ heading: ({ children, level }) =>
+  React.createElement(
+   `h${level}`,
+   { className: `title is-${level} has-text-weight-bold` },
+   children
+  )
 };
 
 const Md = props => (

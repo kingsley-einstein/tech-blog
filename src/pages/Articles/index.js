@@ -2,10 +2,13 @@
 import React from "react";
 import { Box } from "../../components";
 import * as util from "../../utils";
+import * as api from "../../api";
 
 const Articles = props => {
  const [articles, setArticles] = React.useState([]);
  const [page, setPage] = React.useState(1);
+ const [likes, setLikes] = React.useState({});
+ const [reads, setReads] = React.useState({});
  // const [columns, setColumns] = React.useState([]);
 
  const incrementPage = () => {
@@ -21,9 +24,27 @@ const Articles = props => {
   if (page > 1) setPage(page - 1);
  };
 
+ const countLikes = async () => {
+  for (const article of articles) {
+   const res = await api.invoke("countLikes", { articleId: article.id });
+   console.log(res.data, "======", res);
+   setLikes({ ...likes, [article.id]: res.data });
+  }
+ };
+
+ const countReads = async () => {
+  for (const article of articles) {
+   const res = await api.invoke("countReads", { articleId: article.id });
+   console.log(res.data, "++++++", res);
+   setReads({ ...reads, [article.id]: res.data });
+  }
+ };
+
  const loadItems = async () => {
   const a = await util.loadArticles();
   setArticles(a);
+
+  // await countLikes();
   // loadCols();
  };
 
@@ -43,7 +64,15 @@ const Articles = props => {
   loadItems().then(() => {
    console.log("Articles Loaded!!!");
   });
- }, [page]);
+
+  countLikes().then(() => {
+   console.log("Data Received!!!");
+  });
+
+  countReads().then(() => {
+   console.log("Data Received!!!");
+  });
+ });
 
  // React.useEffect(() => {
  //  loadCols();
@@ -57,7 +86,11 @@ const Articles = props => {
      {articles.slice((page - 1) * 10, page * 10).map(article => (
       <li key={article.id}>
        <Box
-        style={{ marginTop: 12, cursor: "pointer" }}
+        style={{
+         marginTop: 12,
+         cursor: "pointer",
+         fontFamily: "Montserrat, sans-serif"
+        }}
         onClick={() => navigateToArticlePage(article.id)}
        >
         <article className="media">
@@ -76,15 +109,22 @@ const Articles = props => {
           </div>
           <nav className="level is-mobile">
            <div className="level-left">
-            <a className="level-item" aria-label="likes">
+            <a className="button is-white level-item" aria-label="likes">
              <span className="icon is-small">
-              <i className="fa fa-heart"></i>
+              <i className="fa fa-thumbs-up"></i>
              </span>
+             <strong>{likes[article.id]}</strong>
             </a>
-            <a className="level-item" aria-label="reads">
+            {/* <a className="level-item" aria-label="dislikes">
+             <span className="icon is-small">
+              <i className="fa fa-thumbs-down"></i>
+             </span>
+            </a> */}
+            <a className="button is-white level-item" aria-label="reads">
              <span className="icon is-small">
               <i className="fa fa-book-reader"></i>
              </span>
+             <strong>{reads[article.id]}</strong>
             </a>
            </div>
           </nav>
