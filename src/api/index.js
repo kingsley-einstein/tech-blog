@@ -27,7 +27,10 @@ const keys = {
 export const invoke = async (type, body = {}) => {
  const res = await axios.post(keys[type], body);
 
- if (res.status >= 400) throw new Error(res.data.err);
+ if (res.status >= 400) {
+  //console.log(res);
+  throw new Error(res.data.err);
+ }
 
  return Promise.resolve({ ...res.data });
 };

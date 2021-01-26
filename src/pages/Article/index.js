@@ -1,5 +1,6 @@
 import React from "react";
 import { Markdown, ArticleActions } from "../../components";
+import * as api from "../../api";
 import * as utils from "../../utils";
 
 const Article = props => {
@@ -12,10 +13,22 @@ const Article = props => {
   setContent(item);
  };
 
+ const markRead = async () => {
+  await api.invoke("read", { articleId: id });
+ };
+
  React.useEffect(() => {
   loadContent().then(() => {
    console.log("Loaded Markdown!!!");
   });
+
+  markRead().then(() => {
+   console.log("Marked Read!!!");
+  });
+
+  return () => {
+   console.log("Cleaned!!!");
+  };
  });
 
  return (

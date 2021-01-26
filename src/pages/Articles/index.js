@@ -72,6 +72,10 @@ const Articles = props => {
   countReads().then(() => {
    console.log("Data Received!!!");
   });
+
+  return () => {
+   console.log("Cleaned!!!");
+  };
  });
 
  // React.useEffect(() => {
