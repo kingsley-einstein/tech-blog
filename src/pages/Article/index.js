@@ -1,5 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
-import { Markdown, ArticleActions } from "../../components";
+import { Markdown, ArticleActions, Comments } from "../../components";
 import * as api from "../../api";
 import * as utils from "../../utils";
 
@@ -21,15 +22,13 @@ const Article = props => {
   loadContent().then(() => {
    console.log("Loaded Markdown!!!");
   });
+ }, []);
 
+ React.useEffect(() => {
   markRead().then(() => {
    console.log("Marked Read!!!");
   });
-
-  return () => {
-   console.log("Cleaned!!!");
-  };
- });
+ }, []);
 
  return (
   <div className="container" style={{ marginTop: "2em" }}>
@@ -39,6 +38,7 @@ const Article = props => {
    >
     <Markdown source={content} />
     <ArticleActions id={id} />
+    <Comments id={id} />
    </div>
   </div>
  );

@@ -14,6 +14,8 @@ import SkS from "./Skills-Section";
 import ArtActions from "./ArticleActions";
 import Mdl from "./Modal";
 import Pnl from "./Panel";
+import Cmnts from "./Comments";
+import NoData from "./NoData";
 
 export const Button = Btn;
 export const Markdown = Md;
@@ -31,3 +33,5 @@ export const SkillsSection = SkS;
 export const ArticleActions = ArtActions;
 export const Modal = Mdl;
 export const Panel = Pnl;
+export const Comments = Cmnts;
+export const Empty = NoData;

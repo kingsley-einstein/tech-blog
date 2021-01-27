@@ -1,6 +1,7 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
-import { Box } from "../../components";
+import { Box, Empty } from "../../components";
 import * as util from "../../utils";
 import * as api from "../../api";
 
@@ -65,18 +66,25 @@ const Articles = props => {
    console.log("Articles Loaded!!!");
   });
 
+  // countLikes().then(() => {
+  //  console.log("Data Received!!!");
+  // });
+
+  // countReads().then(() => {
+  //  console.log("Data Received!!!");
+ }, []);
+
+ React.useEffect(() => {
   countLikes().then(() => {
    console.log("Data Received!!!");
   });
+ }, [articles]);
 
+ React.useEffect(() => {
   countReads().then(() => {
    console.log("Data Received!!!");
   });
-
-  return () => {
-   console.log("Cleaned!!!");
-  };
- });
+ }, [articles]);
 
  // React.useEffect(() => {
  //  loadCols();
@@ -139,7 +147,18 @@ const Articles = props => {
      ))}
     </ul>
    ) : (
-    <span>None yet</span>
+    <Empty className="hero is-danger">
+     <div className="hero-body">
+      <div className="container">
+       <div className="icon-text">
+        <span className="icon has-text-warning">
+         <i className="fa fa-exclamation-triangle p-1"></i>
+        </span>
+        <span className="subtitle">Nothing To Show</span>
+       </div>
+      </div>
+     </div>
+    </Empty>
    )}
    <div style={{ marginTop: "3em" }}>
     <nav

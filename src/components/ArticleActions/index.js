@@ -9,10 +9,36 @@ import Modal from "../Modal";
 const ArticleActions = ({ id }) => {
  const [isLiked, setIsLiked] = React.useState(false);
  const [modalShown, showModal] = React.useState(false);
+ const [comment, setComment] = React.useState({
+  name: "Anonymous",
+  content: ""
+ });
+ // const [comments, setComments] = React.useState([]);
+
  const className = isLiked
   ? "button is-small is-link is-light p-1"
   : "button is-small is-white p-1";
  const modalClass = modalShown ? "modal is-active" : "modal";
+
+ const updateComment = e =>
+  setComment({
+   ...comment,
+   [e.target.name]: e.target.value
+  });
+
+ const submitComment = async () => {
+  const res = await api.invoke("addComment", { ...comment, articleId: id });
+
+  if (res.data) showModal(false);
+
+  console.log(res.data);
+  window.location.reload();
+ };
+
+ // const getComments = async () => {
+ //  const res = await api.invoke("findComments", { articleId: id });
+ //  setComments(res.data);
+ // };
 
  const like = () => {
   // console.log(id, "=====");
@@ -73,7 +99,22 @@ const ArticleActions = ({ id }) => {
       </header>
       <section className="modal-card-body">
        <div>
-        <textarea className="textarea" placeholder="Enter Comment"></textarea>
+        <input
+         className="input p-1"
+         name="name"
+         placeholder="Enter Name"
+         onChange={updateComment}
+         value={comment.name}
+         style={{ fontFamily: "Montserrat, sans-serif", marginBottom: 8 }}
+        />
+        <textarea
+         className="textarea"
+         placeholder="Enter Comment"
+         name="content"
+         onChange={updateComment}
+         value={comment.content}
+         style={{ fontFamily: "Montserrat, sans-serif " }}
+        ></textarea>
         {/* <Panel>
        <p className="panel-heading is-primary">Drop comment!</p>
        <div className="panel-block is-active">
@@ -82,7 +123,13 @@ const ArticleActions = ({ id }) => {
        </div>
       </section>
       <footer className="modal-card-foot">
-       <button className="button is-success">Add Comment</button>
+       <button
+        onClick={submitComment}
+        disabled={!comment.name.length > 0 || !comment.content.length > 0}
+        className="button is-success"
+       >
+        Add Comment
+       </button>
       </footer>
      </div>
     </div>
