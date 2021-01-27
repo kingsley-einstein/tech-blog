@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^12.6.0",
     "axios": "^0.21.1",
     "bulma": "^0.9.1",
+    "cross-env": "^7.0.3",
     "emailjs-com": "^2.6.4",
     "express": "^4.17.1",
     "react": "^17.0.1",
@@ -43,7 +44,7 @@
     "format:markup": "prettier --write **/*.html",
     "format:script": "prettier --write **/*.js",
     "format": "npm run format:script && npm run format:style && npm run format:markup",
-    "server": "node server.js"
+    "server": "cross-env NODE_ENV=production node server.js"
   },
   "eslintConfig": {
     "extends": [
