@@ -12,6 +12,8 @@ import Sc from "./Skills-Chart";
 import Sum from "./Summary";
 import SkS from "./Skills-Section";
 import ArtActions from "./ArticleActions";
+import Mdl from "./Modal";
+import Pnl from "./Panel";
 
 export const Button = Btn;
 export const Markdown = Md;
@@ -27,3 +29,5 @@ export const SkillsChart = Sc;
 export const Summary = Sum;
 export const SkillsSection = SkS;
 export const ArticleActions = ArtActions;
+export const Modal = Mdl;
+export const Panel = Pnl;
