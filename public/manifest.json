@@ -1,6 +1,7 @@
 {
   "short_name": "The Weird Developer",
   "name": "The Weird Developer's Blog & Portfolio",
+  "description": "Byte siized articles for your learning or amusement.",
   "icons": [
     {
       "src": "img/kingsley.png",
