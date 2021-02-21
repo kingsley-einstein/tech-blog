@@ -71,3 +71,9 @@ self.addEventListener("message", event => {
 });
 
 // Any other custom service worker logic can go here.
+self.addEventListener("fetch", event => {
+ if (event.request.method === "GET") {
+  const { request } = event;
+  event.respondWith(new StaleWhileRevalidate().handle({ event, request }));
+ }
+});
