@@ -21,9 +21,10 @@ const items = {
     {
       id: "b7e27545-02fc-4e07-98fd-6853a2e2c019",
       title: "Integration tests with Spring Boot and Wiremock",
-      date: "",
-      description: "",
-      image: ""
+      date: "3/7/2021",
+      description:
+        "Mock external APIs with WireMock. Write integration tests across Spring Boot microservices without having to worry about having them up.",
+      image: "https://miro.medium.com/max/2560/1*vpVrRPTqtR43nOwILBC7xQ.png"
     }
   ]
 };
