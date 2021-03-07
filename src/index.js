@@ -11,15 +11,15 @@ window.customElements.define("codersrank-skills-chart", CodersRankSkillsChart);
 // window.customElements.define("codersrank-summary", CodersRankSummary);
 
 if (!localStorage.getItem("Client_Id")) {
- const Client_Id = uuid();
- localStorage.setItem("Client_Id", Client_Id);
+  const Client_Id = uuid();
+  localStorage.setItem("Client_Id", Client_Id);
 }
 
 ReactDOM.render(
- <React.StrictMode>
-  <App />
- </React.StrictMode>,
- document.getElementById("root")
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById("root")
 );
 
 console.log(`App is running in ${process.env.NODE_ENV} mode`);
@@ -28,9 +28,9 @@ console.log(`App is running in ${process.env.NODE_ENV} mode`);
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://cra.link/PWA
 if (process.env.NODE_ENV === "production") {
- serviceWorkerRegistration.register();
+  serviceWorkerRegistration.register();
 } else {
- serviceWorkerRegistration.unregister();
+  serviceWorkerRegistration.unregister();
 }
 
 // If you want to start measuring performance in your app, pass a function

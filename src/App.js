@@ -12,17 +12,17 @@ import "@fortawesome/fontawesome-free/css/solid.min.css";
 import "@fortawesome/fontawesome-free/css/svg-with-js.min.css";
 
 const App = () => {
- return (
-  <div>
-   <div className="container is-fullhd">
-    <Router>
-     <Header />
-     <Routes />
-    </Router>
-    <Footer />
-   </div>
-  </div>
- );
+  return (
+    <div>
+      <div className="container is-fullhd">
+        <Router>
+          <Header />
+          <Routes />
+        </Router>
+        <Footer />
+      </div>
+    </div>
+  );
 };
 
 export default App;

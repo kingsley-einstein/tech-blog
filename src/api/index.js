@@ -14,23 +14,23 @@ const isLiked = ROOT + `/${functionPrefix}-isLiked`;
 const read = ROOT + `/${functionPrefix}-read`;
 
 const keys = {
- action,
- addComment,
- countLikes,
- countReads,
- deleteComment,
- findComments,
- isLiked,
- read
+  action,
+  addComment,
+  countLikes,
+  countReads,
+  deleteComment,
+  findComments,
+  isLiked,
+  read
 };
 
 export const invoke = async (type, body = {}) => {
- const res = await axios.post(keys[type], body);
+  const res = await axios.post(keys[type], body);
 
- if (res.status >= 400) {
-  //console.log(res);
-  throw new Error(res.data.err);
- }
+  if (res.status >= 400) {
+    //console.log(res);
+    throw new Error(res.data.err);
+  }
 
- return Promise.resolve({ ...res.data });
+  return Promise.resolve({ ...res.data });
 };
