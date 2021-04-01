@@ -8,8 +8,8 @@ import * as api from "../../api";
 const Articles = props => {
   const [articles, setArticles] = React.useState([]);
   const [page, setPage] = React.useState(1);
-  const [likes, setLikes] = React.useState({});
-  const [reads, setReads] = React.useState({});
+  const [likes, setLikes] = React.useState([]);
+  const [reads, setReads] = React.useState([]);
   // const [columns, setColumns] = React.useState([]);
 
   const incrementPage = () => {
@@ -29,7 +29,8 @@ const Articles = props => {
     for (const article of articles) {
       const res = await api.invoke("countLikes", { articleId: article.id });
       console.log(res.data, "======", res);
-      setLikes({ ...likes, [article.id]: res.data });
+      setLikes([...likes, { [article.id]: res.data }]);
+      // setLikes({ ...likes, [article.id]: res.data });
     }
   };
 
@@ -37,7 +38,8 @@ const Articles = props => {
     for (const article of articles) {
       const res = await api.invoke("countReads", { articleId: article.id });
       console.log(res.data, "++++++", res);
-      setReads({ ...reads, [article.id]: res.data });
+      setReads([...reads, { [article.id]: res.data }]);
+      // setReads({ ...reads, [article.id]: res.data });
     }
   };
 
@@ -129,7 +131,17 @@ const Articles = props => {
                           <span className="icon is-small">
                             <i className="fa fa-thumbs-up"></i>
                           </span>
-                          <strong>{likes[article.id]}</strong>
+                          <strong>
+                            {
+                              likes
+                                .filter(
+                                  like =>
+                                    Object.keys(like).includes(article.id) ||
+                                    !!like[article.id]
+                                )
+                                .map(like => like[article.id])[0]
+                            }
+                          </strong>
                         </a>
                         {/* <a className="level-item" aria-label="dislikes">
              <span className="icon is-small">
@@ -143,7 +155,17 @@ const Articles = props => {
                           <span className="icon is-small">
                             <i className="fa fa-book-reader"></i>
                           </span>
-                          <strong>{reads[article.id]}</strong>
+                          <strong>
+                            {
+                              reads
+                                .filter(
+                                  read =>
+                                    Object.keys(read).includes(article.id) ||
+                                    !!read[article.id]
+                                )
+                                .map(read => read[article.id])[0]
+                            }
+                          </strong>
                         </a>
                       </div>
                     </nav>

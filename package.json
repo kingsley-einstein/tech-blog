@@ -40,10 +40,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "format:style": "prettier --write **/*.css",
-    "format:markup": "prettier --write **/*.html",
-    "format:script": "prettier --write **/*.js",
-    "format": "npm run format:script && npm run format:style && npm run format:markup",
+    "format": "prettier --write **/*.{js,css,html,json}",
     "server": "cross-env NODE_ENV=production node server.js"
   },
   "eslintConfig": {
