@@ -5,6 +5,6 @@ COPY public ./public
 COPY src ./src
 RUN npm install
 COPY . .
-RUN npm run build
+RUN npm run build && npm run build:server
 EXPOSE $PORT
 ENTRYPOINT ["npm", "run", "server"]

@@ -4,7 +4,7 @@ const path = require("path");
 const React = require("react");
 const ReactDOMServer = require("react-dom/server");
 const { StaticRouter } = require("react-router-dom");
-const App = require("./App");
+const App = require("./src/App");
 
 const app = express();
 
