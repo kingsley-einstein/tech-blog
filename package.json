@@ -41,8 +41,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "format": "prettier --write **/*.{js,css,html,json}",
-    "server": "cross-env NODE_ENV=production node server.build.js",
-    "build:server": "cross-env NODE_ENV=production webpack --config webpack.server.js --mode=production"
+    "bootstrap": "cross-env NODE_ENV=production node bootstrap.js"
   },
   "eslintConfig": {
     "extends": [
@@ -66,11 +65,7 @@
     "@babel/core": "^7.10.4",
     "@babel/preset-env": "^7.10.4",
     "@babel/preset-react": "^7.10.4",
-    "babel-loader": "^8.1.0",
-    "css-loader": "^5.2.5",
-    "style-loader": "^2.0.0",
-    "webpack": "^4.44.2",
-    "webpack-cli": "^3.3.12",
-    "webpack-node-externals": "^1.7.2"
+    "@babel/register": "^7.13.16",
+    "ignore-styles": "^5.0.1"
   }
 }
