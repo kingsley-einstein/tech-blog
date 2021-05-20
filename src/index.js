@@ -15,7 +15,7 @@ if (!localStorage.getItem("Client_Id")) {
   localStorage.setItem("Client_Id", Client_Id);
 }
 
-ReactDOM.render(
+ReactDOM.hydrate(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
