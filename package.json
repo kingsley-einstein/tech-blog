@@ -42,7 +42,7 @@
     "eject": "react-scripts eject",
     "format": "prettier --write **/*.{js,css,html,json}",
     "server": "cross-env NODE_ENV=production node server.build.js",
-    "build:server": "cross-env NODE_ENV=production webpack --config webpack.server.js --mode=production -w"
+    "build:server": "cross-env NODE_ENV=production webpack --config webpack.server.js --mode=production"
   },
   "eslintConfig": {
     "extends": [
