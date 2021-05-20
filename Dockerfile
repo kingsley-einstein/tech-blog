@@ -5,6 +5,6 @@ COPY public ./public
 COPY src ./src
 RUN npm install
 COPY . .
-RUN npm run build && npm run bootstrap
+RUN npm run build
 EXPOSE $PORT
-ENTRYPOINT ["npm", "run", "server"]
+ENTRYPOINT ["npm", "run", "bootstrap"]
