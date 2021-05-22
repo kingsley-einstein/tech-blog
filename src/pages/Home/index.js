@@ -30,7 +30,7 @@ const Home = props => (
             <div className="media-content">
               <p className="title is-4">Kingsley Victor</p>
               <p className="subtitle is-6">
-                Software Engineer @ Leadwallet & Notch | Citizen Of Java Nation
+                Software Engineer @ Leadwallet & DeSpace Ecosystem | Citizen Of Java Nation
                 | Lover Of Anything JavaScript | The Mack-Daddy Of Microservices
                 and Serverless | Potential GraphQL Junkie | Algonaut | ML/AI
                 Enthusiast | Budding Philosopher
