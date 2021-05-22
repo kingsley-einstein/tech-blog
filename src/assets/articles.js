@@ -25,6 +25,15 @@ const items = {
       description:
         "Mock external APIs with WireMock. Write integration tests across Spring Boot microservices without having to worry about having them up.",
       image: "https://miro.medium.com/max/2560/1*vpVrRPTqtR43nOwILBC7xQ.png"
+    },
+    {
+      id: "0fc786b9-4485-4fd6-81f4-4e84ec398a26",
+      title: "The necessity of equality in the tech ecosphere",
+      date: "5/22/2021",
+      description:
+        "Expressing my allegiance to the movement of equality in the tech ecosystem.",
+      image:
+        "https://images.hrtechnologist.com/images/uploads/content_images/gender_equality_5de658014490d.jpg"
     }
   ]
 };
