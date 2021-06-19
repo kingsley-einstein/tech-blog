@@ -34,6 +34,15 @@ const items = {
         "Expressing my allegiance to the movement of equality in the tech ecosystem.",
       image:
         "https://images.hrtechnologist.com/images/uploads/content_images/gender_equality_5de658014490d.jpg"
+    },
+    {
+      id: "466795b8-feb5-4838-ae5c-05e0ce654e0f",
+      title:
+        "Building a simple cryptocurrency blockchain in Javascript (part I)",
+      date: "6/19/2021",
+      description: "Building a very basic cryptocurrency network in Javascript",
+      image:
+        "https://www.researchgate.net/profile/Hany-Atlam/publication/325486515/figure/fig4/AS:632645692174341@1527845895778/Simple-example-of-blockchain-technology.png"
     }
   ]
 };
